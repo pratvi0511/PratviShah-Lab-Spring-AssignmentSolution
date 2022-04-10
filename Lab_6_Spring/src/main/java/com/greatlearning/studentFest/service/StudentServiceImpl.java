@@ -15,32 +15,23 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
 		List<Student> students = studentRepository.findAll();
 		return students;
 	}
 
 	@Override
 	public Student findById(int theId) {
-		// TODO Auto-generated method stub
 		Student stud = studentRepository.findById(theId).get();
 		return stud;
 	}
 
 	@Override
 	public void save(Student stud) {
-		studentRepository.save(stud);
-		// TODO Auto-generated method stub
-		
+		studentRepository.save(stud);	
 	}
 
 	@Override
 	public void deleteById(int theId) {
-		// TODO Auto-generated method stub
-		studentRepository.deleteById(theId);
-		
+		studentRepository.deleteById(theId);	
 	}
-
-	 
-	
 }
