@@ -24,11 +24,10 @@
 		<h3>Student Fest Directory</h3>
 		<hr>
 
-		<!-- Add a search form -->
-
+		<!-- Adding a search form -->
 		<form action="/StudentManagemt/students/search" class="form-inline">
 
-			<!-- Add a button -->
+			<!-- Adding a button -->
 			<a href="/StudentManagement/students/showFormForAdd"
 				class="btn btn-primary btn-sm mb-3"> Add Student </a> 
 				
@@ -53,7 +52,7 @@
 						<td><c:out value="${tempStud.department}" /></td>
 						<td><c:out value="${tempStud.country}" /></td>
 						<td>
-							<!-- Add "update" button/link --> <a
+							<!-- Adding "update" button/link --> <a
 							href="/StudentManagement/students/showFormForUpdate?studentId=${tempStud.id}"
 							class="btn btn-info btn-sm"> Update </a> <!-- Add "delete" button/link -->
 							<a href="/StudentManagement/students/delete?studentId=${tempStud.id}"
