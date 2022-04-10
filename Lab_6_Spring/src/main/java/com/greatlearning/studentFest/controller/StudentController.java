@@ -23,10 +23,10 @@ public class StudentController {
 	
 	@RequestMapping("/list")
 	public String listStudents(Model theModel) {
-		//get the Students from db
+		//Getting the Students from db
 		List<Student> theStudents = studentService.findAll();	
 		
-		//add to the spring model
+		//Adding to the spring model
 		theModel.addAttribute("Students", theStudents);
 		
 		return "list-Students";
@@ -34,7 +34,7 @@ public class StudentController {
 	
 	@RequestMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
-		//create model attribute to bind the data
+		//Creating model attribute to bind the data
 		Student theStud = new Student();
 		
 		theModel.addAttribute("Student", theStud);
@@ -45,14 +45,13 @@ public class StudentController {
 	public String showFormForUpdate(@RequestParam("studentId") int theId,
 			Model theModel) {
 
-		// get the Book from the service
+		//Getting the Book from the service
 		Student theStudent = studentService.findById(theId);
 
 
-		// set Book as a model attribute to pre-populate the form
+		//Set Book as a model attribute to pre-populate the form
 		theModel.addAttribute("Student", theStudent);
 
-		// send over to our form
 		return "Student-form";			
 	}
 	
@@ -71,11 +70,10 @@ public class StudentController {
 		}
 		else
 			theStudent=new Student(name, department, country);
-		// save the student
 		studentService.save(theStudent);
 
 
-		// use a redirect to prevent duplicate submissions
+		//Use a redirect to prevent duplicate submissions
 		return "redirect:/students/list";
 
 	}
@@ -83,10 +81,8 @@ public class StudentController {
 	@RequestMapping("/delete")
 	public String delete(@RequestParam("studentId") int theId) {
 
-		// delete the student
 		studentService.deleteById(theId);
 
-		// redirect to /students/list
 		return "redirect:/students/list";
 
 	}
